@@ -554,7 +554,7 @@ public:
 
 
 template<typename T1, typename T2>
-inline uint256 Hash(const T1 p1begin, const T1 p1end,
+inline uint256 Hash4(const T1 p1begin, const T1 p1end,
                     const T2 p2begin, const T2 p2end)
 {
     static unsigned char pblank[1];
@@ -569,7 +569,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end,
     return hash2;
 }
 
-template<typename T1, typename T2, typename T3>
+/*template<typename T1, typename T2, typename T3>
 inline uint256 Hash(const T1 p1begin, const T1 p1end,
                     const T2 p2begin, const T2 p2end,
                     const T3 p3begin, const T3 p3end)
@@ -585,7 +585,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end,
     uint256 hash2;
     SHA256((unsigned char*)&hash1, sizeof(hash1), (unsigned char*)&hash2);
     return hash2;
-}
+}*/
 
 template<typename T>
 uint256 SerializeHash(const T& obj, int nType=SER_GETHASH, int nVersion=PROTOCOL_VERSION)
