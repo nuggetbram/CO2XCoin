@@ -3084,7 +3084,7 @@ bool LoadBlockIndex(bool fAllowNew)
 //    CTxOut(empty)
 //vMerkleTree: ea6fed5e2
         // Genesis block
-        const char* pszTimestamp = !fTestNet ? "03/02/2015-6:33PM AESDST" : "Tranz Testnet";
+        const char* pszTimestamp = !fTestNet ? "09/02/2015-9:33PM AESDST" : "Tranz Testnet";
         CTransaction txNew;
        txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -3096,9 +3096,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1422596000;
+        block.nTime    = 1423476000;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 215;
+        block.nNonce   = 3128;
         if (fTestNet)
         {
             block.nTime = 1371910069;
@@ -3116,9 +3116,9 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nNonce = %u \n", block.nNonce);
 
         if (fTestNet)
-           assert(block.hashMerkleRoot == uint256("0x55c7717b0d8765c5b539a0ba0fc1f3398618842a854c47abbd5e06450c97bf6a"));
+           assert(block.hashMerkleRoot == uint256("0xc948a77b36fc2737380b30bbb87e36404d827ac44a1410a3e2f7aa934e6cdff0"));
         else
-           assert(block.hashMerkleRoot == uint256("0x55c7717b0d8765c5b539a0ba0fc1f3398618842a854c47abbd5e06450c97bf6a"));
+           assert(block.hashMerkleRoot == uint256("0xc948a77b36fc2737380b30bbb87e36404d827ac44a1410a3e2f7aa934e6cdff0"));
 
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
