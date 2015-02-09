@@ -949,14 +949,15 @@ public:
 
     uint256 GetHash() const
     {
-        uint256 thash;
+        /*uint256 thash;
         void * scratchbuff = scrypt_buffer_alloc();
 
         scrypt_hash(CVOIDBEGIN(nVersion), sizeof(block_header), UINTBEGIN(thash), scratchbuff);
 
         scrypt_buffer_free(scratchbuff);
 
-        return thash;
+        return thash;*/
+		return HashMirror(BEGIN(nVersion), END(nNonce));
     }
 
     int64 GetBlockTime() const
