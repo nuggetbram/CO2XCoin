@@ -40,12 +40,12 @@ static CBigNum bnProofOfStakeLimit(~uint256(0) >> 24);
 static CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 static CBigNum bnProofOfStakeLimitTestNet(~uint256(0) >> 20);
 
-unsigned int nStakeMinAge = 60 * 60 * 24 * 1; // minimum age for coin age
+unsigned int nStakeMinAge = 60 * 60; // minimum age for coin age
 unsigned int nStakeMaxAge = 60 * 60 * 24 * 90; // stake age of full weight
 
 
 //Version 2.0 will change weight 15/45 days
-unsigned int nStakeMinAgeV2 = 60 * 60 * 24 * 1; // minimum age for coin age
+unsigned int nStakeMinAgeV2 = 60 * 60; // minimum age for coin age
 unsigned int nStakeMaxAgeV2 = 60 * 60 * 24 * 90; // stake age of full weight
 
 
