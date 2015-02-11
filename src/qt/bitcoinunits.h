@@ -18,6 +18,7 @@ public:
     enum Unit
     {
         BTC,
+        CO2,
         mBTC,
         uBTC
     };
