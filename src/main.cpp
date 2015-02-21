@@ -40,17 +40,17 @@ static CBigNum bnProofOfStakeLimit(~uint256(0) >> 24);
 static CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 static CBigNum bnProofOfStakeLimitTestNet(~uint256(0) >> 20);
 
-unsigned int nStakeMinAge = 60 * 60; // minimum age for coin age
-unsigned int nStakeMaxAge = 60 * 60 * 24 * 90; // stake age of full weight
+unsigned int nStakeMinAge = 60 * 60 * 24; // minimum age for coin age
+unsigned int nStakeMaxAge = 60 * 60 * 24 * 30; // stake age of full weight
 
 
 //Version 2.0 will change weight 15/45 days
-unsigned int nStakeMinAgeV2 = 60 * 60; // minimum age for coin age
-unsigned int nStakeMaxAgeV2 = 60 * 60 * 24 * 90; // stake age of full weight
+unsigned int nStakeMinAgeV2 = 60 * 60 * 24; // minimum age for coin age
+unsigned int nStakeMaxAgeV2 = 60 * 60 * 24 * 30; // stake age of full weight
 
 
 unsigned int nStakeTargetSpacing = 1 * 60; // 1-minute block spacing
-int64 nChainStartTime = 1371910049;
+int64 nChainStartTime = 1424519450;
 int nCoinbaseMaturity = 5;
 int nCoinbaseMaturityMultipiler = 4000;
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -1291,10 +1291,7 @@ float GetFoundationAmount(unsigned int nHeight)
      	     {
      	     nBlockReward = 0.1;
      	     }
-     else
-     	     {
-     	     nBlockReward = 0;
-     	     }
+     
      	     
 	     
     float nSubsidy = nBlockReward * COIN;
@@ -3096,9 +3093,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1423476000;
+        block.nTime    = 1424519450;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 3128;
+        block.nNonce   = 1544770;
         if (fTestNet)
         {
             block.nTime = 1371910069;
@@ -3106,19 +3103,29 @@ bool LoadBlockIndex(bool fAllowNew)
             block.nNonce = 3859086;
         }
 
- 	
+		 //// debug print
+        uint256 hash = block.GetHash();
+        while (hash > bnProofOfWorkLimit.getuint256()){
+            if (++block.nNonce==0) break;
+            hash = block.GetHash();
+        }
 
-        //// debug print
+        printf("%s\n", hash.ToString().c_str());
+        printf("%s\n", hashGenesisBlock.ToString().c_str());
+        printf("%s\n", block.hashMerkleRoot.ToString().c_str());
+        block.print();
+
+        /*//// debug print
         block.print();
         printf("block.GetHash() == %s\n", block.GetHash().ToString().c_str());
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
         printf("block.nTime = %u \n", block.nTime);
-        printf("block.nNonce = %u \n", block.nNonce);
+        printf("block.nNonce = %u \n", block.nNonce);*/
 
         if (fTestNet)
-           assert(block.hashMerkleRoot == uint256("0xc948a77b36fc2737380b30bbb87e36404d827ac44a1410a3e2f7aa934e6cdff0"));
+           assert(block.hashMerkleRoot == uint256("0x"));
         else
-           assert(block.hashMerkleRoot == uint256("0xc948a77b36fc2737380b30bbb87e36404d827ac44a1410a3e2f7aa934e6cdff0"));
+           assert(block.hashMerkleRoot == uint256("0xb924a67da38be19c1635d238c85525a9bdf0c4370869d9fbb2b5ec65b295a8b7"));
 
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 

@@ -30,15 +30,15 @@ static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
 static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 static const unsigned int MAX_INV_SZ = 50000;
-static const int64 MIN_TX_FEE = 0.1 * CENT;
-static const int64 MIN_RELAY_TX_FEE = 0.1 * CENT;
+static const int64 MIN_TX_FEE = 0.01 * CENT;
+static const int64 MIN_RELAY_TX_FEE = 0.01 * CENT;
 static const int64 MAX_MONEY = 10000000 * COIN;
 static const int64 MAX_MINT_PROOF_OF_WORK = 15 * COIN;
 static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 15 * COIN;
-static const int64 MAX_MINT_PROOF_OF_STAKE = 1 * CENT;
+static const int64 MAX_MINT_PROOF_OF_STAKE = 3 * CENT;
 //Version 2.0
 static const int64 MAX_MINT_PROOF_OF_STAKEV2 = 100 * CENT;
-static const unsigned int VERSION2_SWITCH_TIME = 1404457454; // Fri, 04 Jul 2014 07:04:14 GMT
+static const unsigned int VERSION2_SWITCH_TIME = 0; // Fri, 04 Jul 2014 07:04:14 GMT
 //Tranz test net settings static const unsigned int VERSION2_SWITCH_TIME = 1401854412;
 
 
@@ -47,18 +47,18 @@ static const unsigned int VERSION2_SWITCH_TIME = 1404457454; // Fri, 04 Jul 2014
 
 
 static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
-static const unsigned int PROTOCOL_SWITCH_TIME = 1371686400; // 20 Jun 2013 00:00:00
+static const unsigned int PROTOCOL_SWITCH_TIME = 0; // 20 Jun 2013 00:00:00
 
-static const unsigned int REWARD_SWITCH_TIME = 1369432800; // 25 May 2013 00:00:00
+static const unsigned int REWARD_SWITCH_TIME = 0; // 25 May 2013 00:00:00
 
-static const unsigned int REWARD_FIX_SWITCH_TIME = 1378512000; // 7 SEP 2013 00:00:00 GMT
+static const unsigned int REWARD_FIX_SWITCH_TIME = 0; // 7 SEP 2013 00:00:00 GMT
 
 
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-#define FOUNDATION_ADDRESS "GaCiQQNirDBqhE3c6n8QaPwTjXTvAWs39X"
+#define FOUNDATION_ADDRESS "GKxp6eUMfh1gJTGmqF3fgvmf4ams6nLxSv"
 #define FOUNDATION_ADDRESS_TEST "mwmPTAA7cSDY8Dd5rRHuYitwS2hByXQpdA"
 
 #ifdef USE_UPNP
@@ -67,7 +67,7 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x6b8a9f4bb824bc7893963826150e821a2f19becbfca4871f7c4d70a6dbc849e3");
+static const uint256 hashGenesisBlockOfficial("0x00000e01e25db89e6c8f2463f6f8caf018adf779885ec7aec21b046d7c61f0c7");
 static const uint256 hashGenesisBlockTestNet("0x");
 
 inline int64 PastDrift(int64 nTime)
