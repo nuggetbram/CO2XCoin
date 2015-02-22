@@ -950,7 +950,7 @@ float GetProofOfWorkReward(unsigned int nHeight)
 {
 		float nBlockReward = 3.8;
 	
-    if(nHeight == 50)
+    if(nHeight == 5)
     {
     nBlockReward = 6000000;
     }
@@ -1115,10 +1115,7 @@ float GetProofOfWorkReward(unsigned int nHeight)
      	     {
      	     nBlockReward = 0.1;
      	     }
-     else
-     	     {
-     	     nBlockReward = 0;
-     	     }
+   
      	     
 	     
     float nSubsidy = nBlockReward * COIN;

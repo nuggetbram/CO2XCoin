@@ -1158,7 +1158,8 @@ void MapPort()
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
     {"GREX_Primary_Node", "162.253.154.188"},
-    
+	{"gre-be.cloudapp.net", "gre-be.cloudapp.net"},
+    {"grex-node.cloudapp.net", "grex-node.cloudapp.net"},
 };
 
 void ThreadDNSAddressSeed(void* parg)
