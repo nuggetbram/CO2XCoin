@@ -950,7 +950,7 @@ float GetProofOfWorkReward(unsigned int nHeight)
 {
 		
 	float nSubsidy;
-		nSubsidy *= 6000000;
+		nSubsidy = 6000000;
 	
     if (nHeight > 2)
 		{
