@@ -949,18 +949,17 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 float GetProofOfWorkReward(unsigned int nHeight)
 {
 		
+	float nSubsidy;
+		nSubsidy *= 6000000;
 	
-		float nSubsidy = 6000000;
-	
-    if (nHeight > 1)
+    if (nHeight > 2)
 		{
-			nSubsidy = 3.8;
+			nSubsidy *= 3.8;
 		}
     
-   
      else if(nHeight > 2102400)
     	    {
-    	    nSubsidy = 3.7;
+    	    nSubsidy *= 3.7;
     	    }
      else if(nHeight > 2628000)
      	     {
@@ -1120,9 +1119,9 @@ float GetProofOfWorkReward(unsigned int nHeight)
     
 
     
-    	
+    nSubsidy *= COIN;	
     
-    return nSubsidy * COIN;
+    return nSubsidy;
 }
 
 float GetFoundationAmount(unsigned int nHeight)
