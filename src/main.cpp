@@ -950,189 +950,194 @@ float GetProofOfWorkReward(unsigned int nHeight)
 {
 		
 	float nSubsidy;
-		nSubsidy = 6000000;
 	
-    if (nHeight > 2)
-		{
-			nSubsidy *= 3.8;
-		}
+	
+
+     float nBlockReward = 3.8;
+	
     
+    
+    if(nHeight <= 2102400)
+    	    {
+    	    	nBlockReward = 3.8;    
+    	    }
      else if(nHeight > 2102400)
     	    {
-    	    nSubsidy *= 3.7;
+    	    nBlockReward = 3.7;
     	    }
      else if(nHeight > 2628000)
      	     {
-     	     nSubsidy = 3.6;
+     	     nBlockReward = 3.6;
      	     }
      else if(nHeight > 3153600)
      	     {
-     	     nSubsidy = 3.5;
+     	     nBlockReward = 3.5;
      	     }	    	    
      else if(nHeight > 3679200)
      	     {
-     	     nSubsidy = 3.4;
+     	     nBlockReward = 3.4;
      	     }
      else if(nHeight > 4204800)
      	     {
-     	     nSubsidy = 3.3;
+     	     nBlockReward = 3.3;
      	     }
      else if(nHeight > 4730400)
      	     {
-     	     nSubsidy = 3.2;
+     	     nBlockReward = 3.2;
      	     }
      else if(nHeight > 5256000)
      	     {
-     	     nSubsidy = 3.1;
+     	     nBlockReward = 3.1;
      	     }
      else if(nHeight > 5781600)
      	     {
-     	     nSubsidy = 3.0;
+     	     nBlockReward = 3.0;
      	     }
      else if(nHeight > 6307200)
      	     {
-     	     nSubsidy = 2.9;
+     	     nBlockReward = 2.9;
      	     }
      else if(nHeight > 6832800)
      	     {
-     	     nSubsidy = 2.9;
+     	     nBlockReward = 2.9;
      	     }
      else if(nHeight > 7358400)
      	     {
-     	     nSubsidy = 2.8;
+     	     nBlockReward = 2.8;
      	     }     
      else if(nHeight > 7884000)
      	     {
-     	     nSubsidy = 2.7;
+     	     nBlockReward = 2.7;
      	     } 	     
      else if(nHeight > 8409600)
      	     {
-     	     nSubsidy = 2.6;
+     	     nBlockReward = 2.6;
      	     } 	     
      else if(nHeight > 8935200)
      	     {
-     	     nSubsidy = 2.5;
+     	     nBlockReward = 2.5;
      	     } 	     
      else if(nHeight > 9460800)
      	     {
-     	     nSubsidy = 2.4;
+     	     nBlockReward = 2.4;
      	     } 	     
      else if(nHeight > 9986400)
      	     {
-     	     nSubsidy = 2.3;
+     	     nBlockReward = 2.3;
      	     } 	     
      else if(nHeight > 10512000)
      	     {
-     	     nSubsidy = 2.2;
+     	     nBlockReward = 2.2;
      	     } 	     
      else if(nHeight > 11037600)
      	     {
-     	     nSubsidy = 2.1;
+     	     nBlockReward = 2.1;
      	     } 	     
      else if(nHeight > 11563200)
      	     {
-     	     nSubsidy = 2.0;
+     	     nBlockReward = 2.0;
      	     } 	     
      else if(nHeight > 12088800)
      	     {
-     	     nSubsidy = 1.9;
+     	     nBlockReward = 1.9;
      	     } 	     
      else if(nHeight > 12614400)
      	     {
-     	     nSubsidy = 1.8;
+     	     nBlockReward = 1.8;
      	     } 	     
      else if(nHeight > 13140000)
      	     {
-     	     nSubsidy = 1.7;
+     	     nBlockReward = 1.7;
      	     } 	     
      else if(nHeight > 13665600)
      	     {
-     	     nSubsidy = 1.6;
+     	     nBlockReward = 1.6;
      	     } 	     
      else if(nHeight > 14191200)
      	     {
-     	     nSubsidy = 1.5;
+     	     nBlockReward = 1.5;
      	     } 	     
      else if(nHeight > 14716800)
      	     {
-     	     nSubsidy = 1.4;
+     	     nBlockReward = 1.4;
      	     } 	     
      else if(nHeight > 15242400)
      	     {
-     	     nSubsidy = 1.3;
+     	     nBlockReward = 1.3;
      	     } 	     
      else if(nHeight > 15768000)
      	     {
-     	     nSubsidy = 1.2;
+     	     nBlockReward = 1.2;
      	     } 	     
      else if(nHeight > 16293600)
      	     {
-     	     nSubsidy = 1.1;
+     	     nBlockReward = 1.1;
      	     } 	     
      else if(nHeight > 16819200)
      	     {
-     	     nSubsidy = 1.0;
+     	     nBlockReward = 1.0;
      	     } 	     
      else if(nHeight > 17344800)
      	     {
-     	     nSubsidy = 1.0;
+     	     nBlockReward = 1.0;
      	     } 	     
      else if(nHeight > 17870400)
      	     {
-     	     nSubsidy = 0.9;
+     	     nBlockReward = 0.9;
      	     } 	     
      else if(nHeight > 18396000)
      	     {
-     	     nSubsidy = 0.8;
+     	     nBlockReward = 0.8;
      	     } 	     
      else if(nHeight > 18921600)
      	     {
-     	     nSubsidy = 0.7;
+     	     nBlockReward = 0.7;
      	     } 	     
      else if(nHeight > 19447200)
      	     {
-     	     nSubsidy = 0.6;
+     	     nBlockReward = 0.6;
      	     } 	     
      else if(nHeight > 19972800)
      	     {
-     	     nSubsidy = 0.5;
+     	     nBlockReward = 0.5;
      	     } 
       else if(nHeight > 20498400)
      	     {
-     	     nSubsidy = 0.4;
+     	     nBlockReward = 0.4;
      	     } 	     
        else if(nHeight > 21024000)
      	     {
-     	     nSubsidy = 0.3;
+     	     nBlockReward = 0.3;
      	     }      
      else if(nHeight > 21549600)
      	     {
-     	     nSubsidy = 0.2;
+     	     nBlockReward = 0.2;
      	     } 
      else if(nHeight > 22075200)
      	     {
-     	     nSubsidy = 0.1;
+     	     nBlockReward = 0.1;
      	     }
-		
+     else
+     	     {
+     	     nBlockReward = 0;
+     	     }
      	     
 	     
-    
+    nSubsidy = nBlockReward * COIN;
 
-    
-    nSubsidy *= COIN;	
-    
+
     return nSubsidy;
 }
 
 float GetFoundationAmount(unsigned int nHeight)
 {
-	float nBlockReward = 3.8;
+	float nBlockReward = 17;
 	
    
     
     if(nHeight > 2102400)
     	    {
-    	    nBlockReward = 3.7;
+    	    nBlockReward = 17;
     	    }
      else if(nHeight > 2628000)
      	     {

@@ -30,14 +30,14 @@ static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
 static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 static const unsigned int MAX_INV_SZ = 50000;
-static const int64 MIN_TX_FEE = 0 * CENT;
-static const int64 MIN_RELAY_TX_FEE = 0 * CENT;
+static const int64 MIN_TX_FEE = 0.0001 * CENT;
+static const int64 MIN_RELAY_TX_FEE = 0.0001 * CENT;
 static const int64 MAX_MONEY = 10000000 * COIN;
-static const int64 MAX_MINT_PROOF_OF_WORK = 15 * COIN;
-static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 15 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK = 50 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 50 * COIN;
 static const int64 MAX_MINT_PROOF_OF_STAKE = 3 * CENT;
 //Version 2.0
-static const int64 MAX_MINT_PROOF_OF_STAKEV2 = 100 * CENT;
+static const int64 MAX_MINT_PROOF_OF_STAKEV2 = 3 * CENT;
 static const unsigned int VERSION2_SWITCH_TIME = 0; // Fri, 04 Jul 2014 07:04:14 GMT
 //Tranz test net settings static const unsigned int VERSION2_SWITCH_TIME = 1401854412;
 
