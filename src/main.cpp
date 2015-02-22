@@ -948,14 +948,14 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 // miner's coin base reward based on nBits
 float GetProofOfWorkReward(unsigned int nHeight)
 {
-		float nBlockReward = 3.8;
+		float nBlockReward;
 	
-    if(nHeight == 10)
+    if(nHeight == 1)
     {
-    nBlockReward = 6000000;
+    nBlockReward = 6000000 * COIN;
     }
     
-    else if(nHeight <= 2102400)
+    if(nHeight <= 2102400 && nHeight != 1)
     	    {
     	    	nBlockReward = 3.8;    
     	    }
@@ -1115,7 +1115,7 @@ float GetProofOfWorkReward(unsigned int nHeight)
      	     {
      	     nBlockReward = 0.1;
      	     }
-   
+		
      	     
 	     
     float nSubsidy = nBlockReward * COIN;
