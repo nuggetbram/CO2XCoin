@@ -948,174 +948,171 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 // miner's coin base reward based on nBits
 float GetProofOfWorkReward(unsigned int nHeight)
 {
-		float nBlockReward;
+		
 	
-		float nSubsidy = nBlockReward * COIN;
+		float nSubsidy = 6000000;
 	
-    if(nHeight == 1)
-    {
-    nSubsidy = 6000000;
-    }
+    if (nHeight > 1)
+		{
+			nSubsidy = 3.8;
+		}
     
-    if(nHeight <= 2102400 && nHeight != 1)
-    	    {
-    	    	nBlockReward = 3.8;    
-    	    }
+   
      else if(nHeight > 2102400)
     	    {
-    	    nBlockReward = 3.7;
+    	    nSubsidy = 3.7;
     	    }
      else if(nHeight > 2628000)
      	     {
-     	     nBlockReward = 3.6;
+     	     nSubsidy = 3.6;
      	     }
      else if(nHeight > 3153600)
      	     {
-     	     nBlockReward = 3.5;
+     	     nSubsidy = 3.5;
      	     }	    	    
      else if(nHeight > 3679200)
      	     {
-     	     nBlockReward = 3.4;
+     	     nSubsidy = 3.4;
      	     }
      else if(nHeight > 4204800)
      	     {
-     	     nBlockReward = 3.3;
+     	     nSubsidy = 3.3;
      	     }
      else if(nHeight > 4730400)
      	     {
-     	     nBlockReward = 3.2;
+     	     nSubsidy = 3.2;
      	     }
      else if(nHeight > 5256000)
      	     {
-     	     nBlockReward = 3.1;
+     	     nSubsidy = 3.1;
      	     }
      else if(nHeight > 5781600)
      	     {
-     	     nBlockReward = 3.0;
+     	     nSubsidy = 3.0;
      	     }
      else if(nHeight > 6307200)
      	     {
-     	     nBlockReward = 2.9;
+     	     nSubsidy = 2.9;
      	     }
      else if(nHeight > 6832800)
      	     {
-     	     nBlockReward = 2.9;
+     	     nSubsidy = 2.9;
      	     }
      else if(nHeight > 7358400)
      	     {
-     	     nBlockReward = 2.8;
+     	     nSubsidy = 2.8;
      	     }     
      else if(nHeight > 7884000)
      	     {
-     	     nBlockReward = 2.7;
+     	     nSubsidy = 2.7;
      	     } 	     
      else if(nHeight > 8409600)
      	     {
-     	     nBlockReward = 2.6;
+     	     nSubsidy = 2.6;
      	     } 	     
      else if(nHeight > 8935200)
      	     {
-     	     nBlockReward = 2.5;
+     	     nSubsidy = 2.5;
      	     } 	     
      else if(nHeight > 9460800)
      	     {
-     	     nBlockReward = 2.4;
+     	     nSubsidy = 2.4;
      	     } 	     
      else if(nHeight > 9986400)
      	     {
-     	     nBlockReward = 2.3;
+     	     nSubsidy = 2.3;
      	     } 	     
      else if(nHeight > 10512000)
      	     {
-     	     nBlockReward = 2.2;
+     	     nSubsidy = 2.2;
      	     } 	     
      else if(nHeight > 11037600)
      	     {
-     	     nBlockReward = 2.1;
+     	     nSubsidy = 2.1;
      	     } 	     
      else if(nHeight > 11563200)
      	     {
-     	     nBlockReward = 2.0;
+     	     nSubsidy = 2.0;
      	     } 	     
      else if(nHeight > 12088800)
      	     {
-     	     nBlockReward = 1.9;
+     	     nSubsidy = 1.9;
      	     } 	     
      else if(nHeight > 12614400)
      	     {
-     	     nBlockReward = 1.8;
+     	     nSubsidy = 1.8;
      	     } 	     
      else if(nHeight > 13140000)
      	     {
-     	     nBlockReward = 1.7;
+     	     nSubsidy = 1.7;
      	     } 	     
      else if(nHeight > 13665600)
      	     {
-     	     nBlockReward = 1.6;
+     	     nSubsidy = 1.6;
      	     } 	     
      else if(nHeight > 14191200)
      	     {
-     	     nBlockReward = 1.5;
+     	     nSubsidy = 1.5;
      	     } 	     
      else if(nHeight > 14716800)
      	     {
-     	     nBlockReward = 1.4;
+     	     nSubsidy = 1.4;
      	     } 	     
      else if(nHeight > 15242400)
      	     {
-     	     nBlockReward = 1.3;
+     	     nSubsidy = 1.3;
      	     } 	     
      else if(nHeight > 15768000)
      	     {
-     	     nBlockReward = 1.2;
+     	     nSubsidy = 1.2;
      	     } 	     
      else if(nHeight > 16293600)
      	     {
-     	     nBlockReward = 1.1;
+     	     nSubsidy = 1.1;
      	     } 	     
      else if(nHeight > 16819200)
      	     {
-     	     nBlockReward = 1.0;
+     	     nSubsidy = 1.0;
      	     } 	     
      else if(nHeight > 17344800)
      	     {
-     	     nBlockReward = 1.0;
+     	     nSubsidy = 1.0;
      	     } 	     
      else if(nHeight > 17870400)
      	     {
-     	     nBlockReward = 0.9;
+     	     nSubsidy = 0.9;
      	     } 	     
      else if(nHeight > 18396000)
      	     {
-     	     nBlockReward = 0.8;
+     	     nSubsidy = 0.8;
      	     } 	     
      else if(nHeight > 18921600)
      	     {
-     	     nBlockReward = 0.7;
+     	     nSubsidy = 0.7;
      	     } 	     
      else if(nHeight > 19447200)
      	     {
-     	     nBlockReward = 0.6;
+     	     nSubsidy = 0.6;
      	     } 	     
      else if(nHeight > 19972800)
      	     {
-     	     nBlockReward = 0.5;
+     	     nSubsidy = 0.5;
      	     } 
       else if(nHeight > 20498400)
      	     {
-     	     nBlockReward = 0.4;
+     	     nSubsidy = 0.4;
      	     } 	     
        else if(nHeight > 21024000)
      	     {
-     	     nBlockReward = 0.3;
+     	     nSubsidy = 0.3;
      	     }      
      else if(nHeight > 21549600)
      	     {
-     	     nBlockReward = 0.2;
+     	     nSubsidy = 0.2;
      	     } 
      else if(nHeight > 22075200)
      	     {
-     	     nBlockReward = 0.1;
+     	     nSubsidy = 0.1;
      	     }
 		
      	     
@@ -1125,7 +1122,7 @@ float GetProofOfWorkReward(unsigned int nHeight)
     
     	
     
-    return nSubsidy;
+    return nSubsidy * COIN;
 }
 
 float GetFoundationAmount(unsigned int nHeight)
