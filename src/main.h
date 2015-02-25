@@ -33,11 +33,11 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64 MIN_TX_FEE = 0.0001 * CENT;
 static const int64 MIN_RELAY_TX_FEE = 0.0001 * CENT;
 static const int64 MAX_MONEY = 10000000 * COIN;
-static const int64 MAX_MINT_PROOF_OF_WORK = 50 * COIN;
-static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 50 * COIN;
-static const int64 MAX_MINT_PROOF_OF_STAKE = 3 * CENT;
+static const int64 MAX_MINT_PROOF_OF_WORK = 100000000 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 100000000 * COIN;
+static const int64 MAX_MINT_PROOF_OF_STAKE = 5 * CENT;
 //Version 2.0
-static const int64 MAX_MINT_PROOF_OF_STAKEV2 = 3 * CENT;
+static const int64 MAX_MINT_PROOF_OF_STAKEV2 = 5 * CENT;
 static const unsigned int VERSION2_SWITCH_TIME = 0; // Fri, 04 Jul 2014 07:04:14 GMT
 //Tranz test net settings static const unsigned int VERSION2_SWITCH_TIME = 1401854412;
 
