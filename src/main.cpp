@@ -955,10 +955,7 @@ float GetProofOfWorkReward(unsigned int nHeight)
 
      float nBlockReward = 3.8;
 	
-    if(nHeight == 5)
-	{
-		nBlockReward = 6000000;
-	}
+   
     
     if(nHeight <= 2102400 && nHeight != 5)
     	    {
@@ -1136,6 +1133,10 @@ float GetFoundationAmount(unsigned int nHeight)
 {
 	float nBlockReward = 3.8;
 	
+	 if(nHeight == 5)
+	{
+		nBlockReward = 6000000;
+	}
    
     
     if(nHeight > 2102400)
