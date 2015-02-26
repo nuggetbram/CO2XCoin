@@ -74,7 +74,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "GreenCoinX Signed Message:\n";
+const string strMessageMagic = "CO2ExchangeCoin Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -1330,7 +1330,7 @@ int64 GetProofOfStakeRewardV1(int64 nCoinAge, unsigned int nBits, unsigned int n
         CBigNum bnTargetLimit = bnProofOfStakeLimit;
         bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
 
-        // GreenCoinX: reward for coin-year is cut in half every 64x multiply of PoS difficulty
+        // CO2ExchangeCoin: reward for coin-year is cut in half every 64x multiply of PoS difficulty
         // A reasonably continuous curve is used to avoid shock to market
         // (nRewardCoinYearLimit / nRewardCoinYear) ** 4 == bnProofOfStakeLimit / bnTarget
         //
@@ -1394,7 +1394,7 @@ int64 GetProofOfStakeRewardV2(int64 nCoinAge, unsigned int nBits, unsigned int n
     CBigNum bnTargetLimit = bnProofOfStakeLimit;
     bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
 
-    // GreenCoinX: reward for coin-year is cut in half every 64x multiply of PoS difficulty
+    // CO2ExchangeCoin: reward for coin-year is cut in half every 64x multiply of PoS difficulty
     // A reasonably continuous curve is used to avoid shock to market
     // (nRewardCoinYearLimit / nRewardCoinYear) ** 4 == bnProofOfStakeLimit / bnTarget
     //
@@ -1999,8 +1999,8 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = true; // Always active in GreenCoinX
-    bool fStrictPayToScriptHash = true; // Always active in GreenCoinX
+    bool fEnforceBIP30 = true; // Always active in CO2ExchangeCoin
+    bool fStrictPayToScriptHash = true; // Always active in CO2ExchangeCoin
 
     //// issue here: it doesn't know the version
     unsigned int nTxPos;
@@ -2987,7 +2987,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "GreenCoinX", CClientUIInterface::MSG_WARNING);
+        uiInterface.ThreadSafeMessageBox(strMessage, "CO2ExchangeCoin", CClientUIInterface::MSG_WARNING);
         StartShutdown();
         return false;
     }
@@ -3632,7 +3632,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                         hashSalt = GetRandHash();
                     uint64 hashAddr = addr.GetHash();
                     uint256 hashRand = hashSalt ^ (hashAddr<<32) ^ ((GetTime()+hashAddr)/(24*60*60));
-                    hashRand = HashMirror(BEGIN(hashRand), END(hashRand));
+                    hashRand = Hash(BEGIN(hashRand), END(hashRand));
                     multimap<uint256, CNode*> mapMix;
                     BOOST_FOREACH(CNode* pnode, vNodes)
                     {
@@ -3641,7 +3641,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                         unsigned int nPointer;
                         memcpy(&nPointer, &pnode, sizeof(nPointer));
                         uint256 hashKey = hashRand ^ nPointer;
-                        hashKey = HashMirror(BEGIN(hashKey), END(hashKey));
+                        hashKey = Hash(BEGIN(hashKey), END(hashKey));
                         mapMix.insert(make_pair(hashKey, pnode));
                     }
                     int nRelayNodes = fReachable ? 2 : 1; // limited relaying of addresses outside our network(s)
@@ -4165,7 +4165,7 @@ bool ProcessMessages(CNode* pfrom)
         }
 
         // Checksum
-        uint256 hash = HashMirror(vRecv.begin(), vRecv.begin() + nMessageSize);
+        uint256 hash = Hash(vRecv.begin(), vRecv.begin() + nMessageSize);
         unsigned int nChecksum = 0;
         memcpy(&nChecksum, &hash, sizeof(nChecksum));
         if (nChecksum != hdr.nChecksum)
@@ -4316,7 +4316,7 @@ bool SendMessages(CNode* pto, bool fSendTrickle)
                     if (hashSalt == 0)
                         hashSalt = GetRandHash();
                     uint256 hashRand = inv.hash ^ hashSalt;
-                    hashRand = HashMirror(BEGIN(hashRand), END(hashRand));
+                    hashRand = Hash(BEGIN(hashRand), END(hashRand));
                     bool fTrickleWait = ((hashRand & 3) != 0);
 
                     // always trickle our own transactions

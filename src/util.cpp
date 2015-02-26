@@ -1034,7 +1034,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "GreenCoinX";
+    const char* pszModule = "CO2ExchangeCoin";
 #endif
     if (pex)
         return strprintf(
@@ -1083,13 +1083,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\GreenCoinX
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\GreenCoinX
-    // Mac: ~/Library/Application Support/GreenCoinX
-    // Unix: ~/.GreenCoinX
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\CO2ExchangeCoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\CO2ExchangeCoin
+    // Mac: ~/Library/Application Support/CO2ExchangeCoin
+    // Unix: ~/.CO2ExchangeCoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "GreenCoinX";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "CO2ExchangeCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1101,10 +1101,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "GreenCoinX";
+    return pathRet / "CO2ExchangeCoin";
 #else
     // Unix
-    return pathRet / ".GreenCoinX";
+    return pathRet / ".CO2ExchangeCoin";
 #endif
 #endif
 }
@@ -1146,7 +1146,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "GreenCoinX.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "CO2ExchangeCoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1177,7 +1177,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "GreenCoinXd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "CO2ExchangeCoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1319,10 +1319,10 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong GreenCoinX will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong CO2ExchangeCoin will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("GreenCoinX"), CClientUIInterface::MSG_WARNING);
+                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("CO2ExchangeCoin"), CClientUIInterface::MSG_WARNING);
                 }
             }
         }

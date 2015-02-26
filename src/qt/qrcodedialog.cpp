@@ -85,7 +85,7 @@ void QRCodeDialog::genCode()
 
 QString QRCodeDialog::getURI()
 {
-    QString ret = QString("greencoinx:%1").arg(address);
+    QString ret = QString("co2exchangecoin:%1").arg(address);
     int paramCount = 0;
 
     ui->outUri->clear();
@@ -94,7 +94,7 @@ QString QRCodeDialog::getURI()
     {
         if (ui->lnReqAmount->validate())
         {
-            // even if we allow a non BTC unit input in lnReqAmount, we generate the URI with GREX as unit (as defined in BIP21)
+            // even if we allow a non BTC unit input in lnReqAmount, we generate the URI with CO2X as unit (as defined in BIP21)
             ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BTC, ui->lnReqAmount->value()));
             paramCount++;
         }

@@ -135,7 +135,7 @@ Value getnewaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress [account]\n"
-            "Returns a new GreenCoinX address for receiving payments.  "
+            "Returns a new CO2ExchangeCoin address for receiving payments.  "
             "If [account] is specified (recommended), it is added to the address book "
             "so payments received with the address will be credited to [account].");
 
@@ -202,7 +202,7 @@ Value getaccountaddress(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress <account>\n"
-            "Returns the current GreenCoinX address for receiving payments to this account.");
+            "Returns the current CO2ExchangeCoin address for receiving payments to this account.");
 
     // Parse the account first so we don't generate a key if there's an error
     string strAccount = AccountFromValue(params[0]);
@@ -218,7 +218,7 @@ Value autosavings(const Array &params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
-            "autosavings <GreenCoinXaddress> <percent> [min amount] [max amount]\n"
+            "autosavings <CO2ExchangeCoinaddress> <percent> [min amount] [max amount]\n"
             "Gives a percentage of a found stake to a different address, after stake matures\n"
             "Percent is a whole number 1 to 50.\n"
             "Min and Max Amount are optional\n"
@@ -227,7 +227,7 @@ Value autosavings(const Array &params, bool fHelp)
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid GreenCoinX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid CO2ExchangeCoin address");
 
     if (params[1].get_int() < 0)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected valid percentage");
@@ -307,12 +307,12 @@ Value setaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "setaccount <GreenCoinXaddress> <account>\n"
+            "setaccount <CO2ExchangeCoinaddress> <account>\n"
             "Sets the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid GreenCoinX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid CO2ExchangeCoin address");
 
 
     string strAccount;
@@ -337,12 +337,12 @@ Value getaccount(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "getaccount <GreenCoinXaddress>\n"
+            "getaccount <CO2ExchangeCoinaddress>\n"
             "Returns the account associated with the given address.");
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid GreenCoinX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid CO2ExchangeCoin address");
 
     string strAccount;
     map<CTxDestination, string>::iterator mi = pwalletMain->mapAddressBook.find(address.Get());
@@ -377,13 +377,13 @@ Value sendtoaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 2 || params.size() > 4)
         throw runtime_error(
-            "sendtoaddress <GreenCoinXaddress> <amount> [comment] [comment-to]\n"
+            "sendtoaddress <CO2ExchangeCoinaddress> <amount> [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
             + HelpRequiringPassphrase());
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid GreenCoinX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid CO2ExchangeCoin address");
 
     // Amount
     int64 nAmount = AmountFromValue(params[1]);
@@ -443,7 +443,7 @@ Value signmessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 2)
         throw runtime_error(
-            "signmessage <GreenCoinXaddress> <message>\n"
+            "signmessage <CO2ExchangeCoinaddress> <message>\n"
             "Sign a message with the private key of an address");
 
     EnsureWalletIsUnlocked();
@@ -468,7 +468,7 @@ Value signmessage(const Array& params, bool fHelp)
     ss << strMessage;
 
     vector<unsigned char> vchSig;
-    if (!key.SignCompact(HashMirror(ss.begin(), ss.end()), vchSig))
+    if (!key.SignCompact(Hash(ss.begin(), ss.end()), vchSig))
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Sign failed");
 
     return EncodeBase64(&vchSig[0], vchSig.size());
@@ -478,7 +478,7 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-            "verifymessage <GreenCoinXaddress> <signature> <message>\n"
+            "verifymessage <CO2ExchangeCoinaddress> <signature> <message>\n"
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();
@@ -504,7 +504,7 @@ Value verifymessage(const Array& params, bool fHelp)
     ss << strMessage;
 
     CKey key;
-    if (!key.SetCompactSignature(HashMirror(ss.begin(), ss.end()), vchSig))
+    if (!key.SetCompactSignature(Hash(ss.begin(), ss.end()), vchSig))
         return false;
 
     return (key.GetPubKey().GetID() == keyID);
@@ -515,14 +515,14 @@ Value getreceivedbyaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "getreceivedbyaddress <GreenCoinXaddress> [minconf=1]\n"
-            "Returns the total amount received by <GreenCoinXaddress> in transactions with at least [minconf] confirmations.");
+            "getreceivedbyaddress <CO2ExchangeCoinaddress> [minconf=1]\n"
+            "Returns the total amount received by <CO2ExchangeCoinaddress> in transactions with at least [minconf] confirmations.");
 
     // Bitcoin address
     CBitcoinAddress address = CBitcoinAddress(params[0].get_str());
     CScript scriptPubKey;
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid GreenCoinX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid CO2ExchangeCoin address");
     scriptPubKey.SetDestination(address.Get());
     if (!IsMine(*pwalletMain,scriptPubKey))
         return (double)0.0;
@@ -741,14 +741,14 @@ Value sendfrom(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 3 || params.size() > 6)
         throw runtime_error(
-            "sendfrom <fromaccount> <toGreenCoinXaddress> <amount> [minconf=1] [comment] [comment-to]\n"
+            "sendfrom <fromaccount> <toCO2ExchangeCoinaddress> <amount> [minconf=1] [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
             + HelpRequiringPassphrase());
 
     string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid GreenCoinX address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid CO2ExchangeCoin address");
     int64 nAmount = AmountFromValue(params[2]);
 
     if (nAmount < MIN_TXOUT_AMOUNT)
@@ -808,7 +808,7 @@ Value sendmany(const Array& params, bool fHelp)
     {
         CBitcoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid GreenCoinX address: ")+s.name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid CO2ExchangeCoin address: ")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -855,7 +855,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
     {
         string msg = "addmultisigaddress <nrequired> <'[\"key\",\"key\"]'> [account]\n"
             "Add a nrequired-to-sign multisignature address to the wallet\"\n"
-            "each key is a GreenCoinX address or hex-encoded public key\n"
+            "each key is a CO2ExchangeCoin address or hex-encoded public key\n"
             "If [account] is specified, assign address to [account].";
         throw runtime_error(msg);
     }
@@ -1634,7 +1634,7 @@ Value encryptwallet(const Array& params, bool fHelp)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys. So:
     StartShutdown();
-    return "wallet encrypted; GreenCoinX server stopping, restart to run with encrypted wallet.  The keypool has been flushed, you need to make a new backup.";
+    return "wallet encrypted; CO2ExchangeCoin server stopping, restart to run with encrypted wallet.  The keypool has been flushed, you need to make a new backup.";
 }
 
 class DescribeAddressVisitor : public boost::static_visitor<Object>
@@ -1677,8 +1677,8 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "validateaddress <GreenCoinXaddress>\n"
-            "Return information about <GreenCoinXaddress>.");
+            "validateaddress <CO2ExchangeCoinaddress>\n"
+            "Return information about <CO2ExchangeCoinaddress>.");
 
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -1706,8 +1706,8 @@ Value validatepubkey(const Array& params, bool fHelp)
 {
     if (fHelp || !params.size() || params.size() > 2)
         throw runtime_error(
-            "validatepubkey <GreenCoinXpubkey>\n"
-            "Return information about <GreenCoinXpubkey>.");
+            "validatepubkey <CO2ExchangeCoinpubkey>\n"
+            "Return information about <CO2ExchangeCoinpubkey>.");
 
     std::vector<unsigned char> vchPubKey = ParseHex(params[0].get_str());
     CPubKey pubKey(vchPubKey);
@@ -1830,7 +1830,7 @@ Value repairwallet(const Array& params, bool fHelp)
     return result;
 }
 
-// GreenCoinX: resend unconfirmed wallet transactions
+// CO2ExchangeCoin: resend unconfirmed wallet transactions
 Value resendtx(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 1)

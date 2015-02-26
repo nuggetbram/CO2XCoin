@@ -31,7 +31,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
 #endif
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-     ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a GREX address (e.g. EtvVVV9GQLPSjraCF7fFH7yYvN2dy52tLt)"));
+     ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a CO2X address (e.g. EtvVVV9GQLPSjraCF7fFH7yYvN2dy52tLt)"));
 #endif
     addEntry();
 
@@ -459,7 +459,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString & text)
         else if (!CBitcoinAddress(text.toStdString()).IsValid())
         {
             ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
-            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid GREX address"));
+            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid CO2X address"));
         }
         else
         {

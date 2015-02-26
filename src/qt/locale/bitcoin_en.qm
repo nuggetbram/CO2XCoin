@@ -6,18 +6,18 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About GreenCoinX</source>
-        <translation>About GreenCoinX</translation>
+        <source>About CO2ExchangeCoin</source>
+        <translation>About CO2ExchangeCoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;GreenCoinX&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;GreenCoinX&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;CO2ExchangeCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;CO2ExchangeCoin&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2012 The GreenCoinX developers</source>
-        <translation>Copyright © 2009-2012 The GreenCoinX developers</translation>
+        <source>Copyright © 2009-2012 The CO2ExchangeCoin developers</source>
+        <translation>Copyright © 2009-2012 The CO2ExchangeCoin developers</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -64,8 +64,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your GreenCoinX addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>These are your GreenCoinX addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
+        <source>These are your CO2ExchangeCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>These are your CO2ExchangeCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -79,8 +79,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a GreenCoinX address</source>
-        <translation>Sign a message to prove you own a GreenCoinX address</translation>
+        <source>Sign a message to prove you own a CO2ExchangeCoin address</source>
+        <translation>Sign a message to prove you own a CO2ExchangeCoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -94,8 +94,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified GreenCoinX address</source>
-        <translation>Verify a message to ensure it was signed with a specified GreenCoinX address</translation>
+        <source>Verify a message to ensure it was signed with a specified CO2ExchangeCoin address</source>
+        <translation>Verify a message to ensure it was signed with a specified CO2ExchangeCoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -252,8 +252,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>GreenCoinX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>GreenCoinX will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
+        <source>CO2ExchangeCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>CO2ExchangeCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -366,8 +366,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about GreenCoinX</source>
-        <translation>Show information about GreenCoinX</translation>
+        <source>Show information about CO2ExchangeCoin</source>
+        <translation>Show information about CO2ExchangeCoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -419,13 +419,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-58"/>
-        <source>Send coins to a GreenCoinX address</source>
-        <translation>Send coins to a GreenCoinX address</translation>
+        <source>Send coins to a CO2ExchangeCoin address</source>
+        <translation>Send coins to a CO2ExchangeCoin address</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for GreenCoinX</source>
-        <translation>Modify configuration options for GreenCoinX</translation>
+        <source>Modify configuration options for CO2ExchangeCoin</source>
+        <translation>Modify configuration options for CO2ExchangeCoin</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -464,8 +464,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-186"/>
-        <source>GreenCoinX</source>
-        <translation>GreenCoinX</translation>
+        <source>CO2ExchangeCoin</source>
+        <translation>CO2ExchangeCoin</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -474,8 +474,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+168"/>
-        <source>&amp;About GreenCoinX</source>
-        <translation>&amp;About GreenCoinX</translation>
+        <source>&amp;About CO2ExchangeCoin</source>
+        <translation>&amp;About CO2ExchangeCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -516,15 +516,15 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>GreenCoinX client</source>
-        <translation>GreenCoinX client</translation>
+        <source>CO2ExchangeCoin client</source>
+        <translation>CO2ExchangeCoin client</translation>
     </message>
     <message numerus="yes">
         <location line="+69"/>
-        <source>%n active connection(s) to GreenCoinX network</source>
+        <source>%n active connection(s) to CO2ExchangeCoin network</source>
         <translation>
-            <numerusform>%n active connection to GreenCoinX network</numerusform>
-            <numerusform>%n active connections to GreenCoinX network</numerusform>
+            <numerusform>%n active connection to CO2ExchangeCoin network</numerusform>
+            <numerusform>%n active connections to CO2ExchangeCoin network</numerusform>
         </translation>
     </message>
     <message>
@@ -621,8 +621,8 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid GreenCoinX address or malformed URI parameters.</source>
-        <translation>URI can not be parsed! This can be caused by an invalid GreenCoinX address or malformed URI parameters.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid CO2ExchangeCoin address or malformed URI parameters.</source>
+        <translation>URI can not be parsed! This can be caused by an invalid CO2ExchangeCoin address or malformed URI parameters.</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -656,8 +656,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. GreenCoinX can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. GreenCoinX can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. CO2ExchangeCoin can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. CO2ExchangeCoin can no longer continue safely and will quit.</translation>
     </message>
 </context>
 <context>
@@ -722,8 +722,8 @@ Address: %4
     </message>
     <message>
         <location line="+5"/>
-        <source>The entered address &quot;%1&quot; is not a valid GreenCoinX address.</source>
-        <translation>The entered address &quot;%1&quot; is not a valid GreenCoinX address.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid CO2ExchangeCoin address.</source>
+        <translation>The entered address &quot;%1&quot; is not a valid CO2ExchangeCoin address.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -741,8 +741,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+419"/>
         <location line="+12"/>
-        <source>GreenCoinX-Qt</source>
-        <translation>GreenCoinX-Qt</translation>
+        <source>CO2ExchangeCoin-Qt</source>
+        <translation>CO2ExchangeCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -804,13 +804,13 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start GreenCoinX after logging in to the system.</source>
-        <translation>Automatically start GreenCoinX after logging in to the system.</translation>
+        <source>Automatically start CO2ExchangeCoin after logging in to the system.</source>
+        <translation>Automatically start CO2ExchangeCoin after logging in to the system.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start GreenCoinX on system login</source>
-        <translation>&amp;Start GreenCoinX on system login</translation>
+        <source>&amp;Start CO2ExchangeCoin on system login</source>
+        <translation>&amp;Start CO2ExchangeCoin on system login</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -829,8 +829,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the GreenCoinX client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the GreenCoinX client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the CO2ExchangeCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the CO2ExchangeCoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -839,8 +839,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the GreenCoinX network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connect to the GreenCoinX network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
+        <source>Connect to the CO2ExchangeCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connect to the CO2ExchangeCoin network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -914,8 +914,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting GreenCoinX.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting GreenCoinX.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting CO2ExchangeCoin.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting CO2ExchangeCoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -929,8 +929,8 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show GreenCoinX addresses in the transaction list or not.</source>
-        <translation>Whether to show GreenCoinX addresses in the transaction list or not.</translation>
+        <source>Whether to show CO2ExchangeCoin addresses in the transaction list or not.</source>
+        <translation>Whether to show CO2ExchangeCoin addresses in the transaction list or not.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -966,8 +966,8 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting GreenCoinX.</source>
-        <translation>This setting will take effect after restarting GreenCoinX.</translation>
+        <source>This setting will take effect after restarting CO2ExchangeCoin.</source>
+        <translation>This setting will take effect after restarting CO2ExchangeCoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -985,8 +985,8 @@ Address: %4
     <message>
         <location line="+33"/>
         <location line="+183"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the GreenCoinX network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the GreenCoinX network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the CO2ExchangeCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the CO2ExchangeCoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-141"/>
@@ -1201,8 +1201,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the GreenCoinX-Qt help message to get a list with possible GreenCoinX command-line options.</source>
-        <translation>Show the GreenCoinX-Qt help message to get a list with possible GreenCoinX command-line options.</translation>
+        <source>Show the CO2ExchangeCoin-Qt help message to get a list with possible CO2ExchangeCoin command-line options.</source>
+        <translation>Show the CO2ExchangeCoin-Qt help message to get a list with possible CO2ExchangeCoin command-line options.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1221,13 +1221,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>GreenCoinX - Debug window</source>
-        <translation>GreenCoinX - Debug window</translation>
+        <source>CO2ExchangeCoin - Debug window</source>
+        <translation>CO2ExchangeCoin - Debug window</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>GreenCoinX Core</source>
-        <translation>GreenCoinX Core</translation>
+        <source>CO2ExchangeCoin Core</source>
+        <translation>CO2ExchangeCoin Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1236,8 +1236,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the GreenCoinX debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the GreenCoinX debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the CO2ExchangeCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the CO2ExchangeCoin debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1246,8 +1246,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the GreenCoinX RPC console.</source>
-        <translation>Welcome to the GreenCoinX RPC console.</translation>
+        <source>Welcome to the CO2ExchangeCoin RPC console.</source>
+        <translation>Welcome to the CO2ExchangeCoin RPC console.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1430,8 +1430,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a valid GreenCoinX address</source>
-        <translation>Enter a valid GreenCoinX address </translation>
+        <source>Enter a valid CO2ExchangeCoin address</source>
+        <translation>Enter a valid CO2ExchangeCoin address </translation>
     </message>
 </context>
 <context>
@@ -1491,8 +1491,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this GreenCoinX address</source>
-        <translation>Sign the message to prove you own this GreenCoinX address</translation>
+        <source>Sign the message to prove you own this CO2ExchangeCoin address</source>
+        <translation>Sign the message to prove you own this CO2ExchangeCoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1523,8 +1523,8 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified GreenCoinX address</source>
-        <translation>Verify the message to ensure it was signed with the specified GreenCoinX address</translation>
+        <source>Verify the message to ensure it was signed with the specified CO2ExchangeCoin address</source>
+        <translation>Verify the message to ensure it was signed with the specified CO2ExchangeCoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1534,8 +1534,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a valid GreenCoinX address</source>
-        <translation>Enter a valid GreenCoinX address</translation>
+        <source>Enter a valid CO2ExchangeCoin address</source>
+        <translation>Enter a valid CO2ExchangeCoin address</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1544,8 +1544,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter GreenCoinX signature</source>
-        <translation>Enter GreenCoinX signature</translation>
+        <source>Enter CO2ExchangeCoin signature</source>
+        <translation>Enter CO2ExchangeCoin signature</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2115,8 +2115,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+82"/>
-        <source>GreenCoinX version</source>
-        <translation>GreenCoinX version</translation>
+        <source>CO2ExchangeCoin version</source>
+        <translation>CO2ExchangeCoin version</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2145,13 +2145,13 @@ Address: %4
     </message>
     <message>
         <location line="+23"/>
-        <source>Specify configuration file (default: GreenCoinX.conf)</source>
-        <translation>Specify configuration file (default: GreenCoinX.conf)</translation>
+        <source>Specify configuration file (default: CO2ExchangeCoin.conf)</source>
+        <translation>Specify configuration file (default: CO2ExchangeCoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: GreenCoinXd.pid)</source>
-        <translation>Specify pid file (default: GreenCoinXd.pid)</translation>
+        <source>Specify pid file (default: CO2ExchangeCoind.pid)</source>
+        <translation>Specify pid file (default: CO2ExchangeCoind.pid)</translation>
     </message>
     <message>
         <location line="-47"/>
@@ -2305,8 +2305,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong GreenCoinX will not work properly.</source>
-        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong GreenCoinX will not work properly.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong CO2ExchangeCoin will not work properly.</source>
+        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong CO2ExchangeCoin will not work properly.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2540,13 +2540,13 @@ Address: %4
     </message>
     <message>
         <location line="-131"/>
-        <source>Cannot obtain a lock on data directory %s.  GreenCoinX is probably already running.</source>
-        <translation>Cannot obtain a lock on data directory %s.  GreenCoinX is probably already running.</translation>
+        <source>Cannot obtain a lock on data directory %s.  CO2ExchangeCoin is probably already running.</source>
+        <translation>Cannot obtain a lock on data directory %s.  CO2ExchangeCoin is probably already running.</translation>
     </message>
     <message>
         <location line="+57"/>
-        <source>GreenCoinX</source>
-        <translation>GreenCoinX</translation>
+        <source>CO2ExchangeCoin</source>
+        <translation>CO2ExchangeCoin</translation>
     </message>
     <message>
         <location line="+77"/>
@@ -2580,13 +2580,13 @@ Address: %4
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of GreenCoinX</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of GreenCoinX</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of CO2ExchangeCoin</source>
+        <translation>Error loading wallet.dat: Wallet requires newer version of CO2ExchangeCoin</translation>
     </message>
     <message>
         <location line="+73"/>
-        <source>Wallet needed to be rewritten: restart GreenCoinX to complete</source>
-        <translation>Wallet needed to be rewritten: restart GreenCoinX to complete</translation>
+        <source>Wallet needed to be rewritten: restart CO2ExchangeCoin to complete</source>
+        <translation>Wallet needed to be rewritten: restart CO2ExchangeCoin to complete</translation>
     </message>
     <message>
         <location line="-75"/>
@@ -2655,8 +2655,8 @@ Address: %4
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. GreenCoinX is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. GreenCoinX is probably already running.</translation>
+        <source>Unable to bind to %s on this computer. CO2ExchangeCoin is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. CO2ExchangeCoin is probably already running.</translation>
     </message>
     <message>
         <location line="+55"/>

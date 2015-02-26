@@ -82,7 +82,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     rpcConsole(0)
 {
     resize(850, 550);
-    setWindowTitle(tr("GreenCoinX") + " - " + tr("Wallet"));
+    setWindowTitle(tr("CO2ExchangeCoin") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -237,7 +237,7 @@ void BitcoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send coins"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a GreenCoinX address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a CO2ExchangeCoin address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
@@ -310,8 +310,8 @@ void BitcoinGUI::createActions()
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
 
-    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About GreenCoinX"), this);
-    aboutAction->setStatusTip(tr("Show information about GreenCoinX"));
+    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About CO2ExchangeCoin"), this);
+    aboutAction->setStatusTip(tr("Show information about CO2ExchangeCoin"));
     aboutAction->setMenuRole(QAction::AboutRole);
 
     aboutQtAction = new QAction(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
@@ -319,7 +319,7 @@ void BitcoinGUI::createActions()
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
 
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
-    optionsAction->setStatusTip(tr("Modify configuration options for GreenCoinX"));
+    optionsAction->setStatusTip(tr("Modify configuration options for CO2ExchangeCoin"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
 
     toggleHideAction = new QAction(QIcon(":/icons/bitcoin"), tr("&Show / Hide"), this);
@@ -355,10 +355,10 @@ void BitcoinGUI::createActions()
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
 
     signMessageAction = new QAction(QIcon(":/icons/edit"), tr("Sign &message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your GreenCoinX addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your CO2ExchangeCoin addresses to prove you own them"));
 
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified GreenCoinX addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified CO2ExchangeCoin addresses"));
 
     exportAction = new QAction(QIcon(":/icons/export"), tr("&Export..."), this);
     exportAction->setStatusTip(tr("Export the data in the current tab to a file"));
@@ -539,7 +539,7 @@ void BitcoinGUI::createTrayIcon()
 {
     trayIcon = new QSystemTrayIcon(this);
 #ifndef Q_OS_MAC
-    trayIcon->setToolTip(tr("GreenCoinX client"));
+    trayIcon->setToolTip(tr("CO2ExchangeCoin client"));
     trayIcon->setIcon(QIcon(":/icons/toolbar"));
     trayIcon->show();
 #endif
@@ -629,7 +629,7 @@ void BitcoinGUI::blocksIconClicked()
           .arg(clientModel->getLastBlockDate().toString())
           .arg(clientModel->getDifficulty())
           .arg(clientModel->getPoWMHashPS())
-          .arg(tr("10.0000000")) //Hard Coded as GREX is always 10, but should use GetProofOfWorkReward
+          .arg(tr("10.0000000")) //Hard Coded as CO2X is always 10, but should use GetProofOfWorkReward
           .arg(BitcoinUnits::formatWithUnit(unit, clientModel->getMoneySupply(), false))
        ,CClientUIInterface::MODAL);
 }
@@ -733,7 +733,7 @@ void BitcoinGUI::setNumConnections(int count)
     default: icon = ":/icons/connect_4"; break;
     }
     labelConnectionsIcon->setPixmap(QIcon(icon).pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to GreenCoinX network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to CO2ExchangeCoin network", "", count));
 }
 
 void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
@@ -833,7 +833,7 @@ void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
 
 void BitcoinGUI::message(const QString &title, const QString &message, unsigned int style, const QString &detail)
 {
-  QString strTitle = tr("GreenCoinX") + " - ";
+  QString strTitle = tr("CO2ExchangeCoin") + " - ";
   // Default to information icon
   int nMBoxIcon = QMessageBox::Information;
   int nNotifyIcon = Notificator::Information;
@@ -1071,7 +1071,7 @@ void BitcoinGUI::dropEvent(QDropEvent *event)
         if (nValidUrisFound)
             gotoSendCoinsPage();
         else
-            message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid GreenCoinX address or malformed URI parameters."),
+            message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid CO2ExchangeCoin address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
     }
 
@@ -1087,7 +1087,7 @@ void BitcoinGUI::handleURI(QString strURI)
         gotoSendCoinsPage();
     }
     else
-        message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid GreenCoinX address or malformed URI parameters."),
+        message(tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid CO2ExchangeCoin address or malformed URI parameters."),
                  CClientUIInterface::ICON_WARNING);
 }
 

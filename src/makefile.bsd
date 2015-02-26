@@ -137,10 +137,10 @@ OBJS= \
     obj/scrypt-x86_64.o
 
 
-all: GreenCoinXd
+all: CO2ExchangeCoind
 
-test check: test_GreenCoinX FORCE
-	./test_GreenCoinX
+test check: test_CO2ExchangeCoin FORCE
+	./test_CO2ExchangeCoin
 
 # auto-generated dependencies:
 -include obj/*.P
@@ -164,7 +164,7 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-GreenCoinXd: $(OBJS:obj/%=obj/%)
+CO2ExchangeCoind: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -176,11 +176,11 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-test_GreenCoinX: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_CO2ExchangeCoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(LINK) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ -Wl,-B$(LMODE) -lboost_unit_test_framework $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f GreenCoinXd test_GreenCoinX
+	-rm -f CO2ExchangeCoind test_CO2ExchangeCoin
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P

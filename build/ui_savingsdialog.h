@@ -91,9 +91,9 @@ public:
         savingsAddressEdit->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
         savingsAddressEdit->setPlaceholderText(QApplication::translate("AutoSavingsDialog", "Enter Address to Send to", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("AutoSavingsDialog", "Auto Savings allows you to automatically send up to 50% of your stake to another GreenCoinX address after it matures.\n"
+        label_2->setText(QApplication::translate("AutoSavingsDialog", "Auto Savings allows you to automatically send up to 50% of your stake to another CO2ExchangeCoin address after it matures.\n"
 "\n"
-"Please enter percentage to give and GreenCoinX address to save to. Min and Max amount are optional.", 0, QApplication::UnicodeUTF8));
+"Please enter percentage to give and CO2ExchangeCoin address to save to. Min and Max amount are optional.", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
         savingsMinEdit->setToolTip(QApplication::translate("AutoSavingsDialog", "Enter whole numbers", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP

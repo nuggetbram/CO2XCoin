@@ -126,9 +126,9 @@ public:
 
     void retranslateUi(QDialog *AboutDialog)
     {
-        AboutDialog->setWindowTitle(QApplication::translate("AboutDialog", "About GreenCoinX", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("AboutDialog", "<b>GreenCoinX</b> version", 0, QApplication::UnicodeUTF8));
-        copyrightLabel->setText(QApplication::translate("AboutDialog", "Copyright \302\251 2009-2014 The GreenCoinX Foundation", 0, QApplication::UnicodeUTF8));
+        AboutDialog->setWindowTitle(QApplication::translate("AboutDialog", "About CO2ExchangeCoin", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("AboutDialog", "<b>CO2ExchangeCoin</b> version", 0, QApplication::UnicodeUTF8));
+        copyrightLabel->setText(QApplication::translate("AboutDialog", "Copyright \302\251 2009-2014 The CO2ExchangeCoin Foundation", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("AboutDialog", "\n"
 "This is experimental software. By using this software you assume all liability for any loss that may occur. \n"
 "\n"

@@ -153,7 +153,7 @@ public:
     void retranslateUi(QWidget *AddressBookPage)
     {
         AddressBookPage->setWindowTitle(QApplication::translate("AddressBookPage", "Address Book", 0, QApplication::UnicodeUTF8));
-        labelExplanation->setText(QApplication::translate("AddressBookPage", "These are your GreenCoinX addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.", 0, QApplication::UnicodeUTF8));
+        labelExplanation->setText(QApplication::translate("AddressBookPage", "These are your CO2ExchangeCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
         tableView->setToolTip(QApplication::translate("AddressBookPage", "Double-click to edit address or label", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
@@ -167,15 +167,15 @@ public:
         copyToClipboard->setText(QApplication::translate("AddressBookPage", "&Copy Address", 0, QApplication::UnicodeUTF8));
         showQRCode->setText(QApplication::translate("AddressBookPage", "Show &QR Code", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
-        signMessage->setToolTip(QApplication::translate("AddressBookPage", "Sign a message to prove you own a GreenCoinX address", 0, QApplication::UnicodeUTF8));
+        signMessage->setToolTip(QApplication::translate("AddressBookPage", "Sign a message to prove you own a CO2ExchangeCoin address", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
         signMessage->setText(QApplication::translate("AddressBookPage", "Sign &Message", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
-        verifyMessage->setToolTip(QApplication::translate("AddressBookPage", "Verify a message to ensure it was signed with a specified GreenCoinX address", 0, QApplication::UnicodeUTF8));
+        verifyMessage->setToolTip(QApplication::translate("AddressBookPage", "Verify a message to ensure it was signed with a specified CO2ExchangeCoin address", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
         verifyMessage->setText(QApplication::translate("AddressBookPage", "&Verify Message", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
-        autoSavingsPushButton->setToolTip(QApplication::translate("AddressBookPage", "Send a percentage of stake to a specified GreenCoinX address", 0, QApplication::UnicodeUTF8));
+        autoSavingsPushButton->setToolTip(QApplication::translate("AddressBookPage", "Send a percentage of stake to a specified CO2ExchangeCoin address", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
         autoSavingsPushButton->setText(QApplication::translate("AddressBookPage", "&Auto Savings", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP

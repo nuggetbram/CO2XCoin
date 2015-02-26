@@ -10,6 +10,7 @@
 #include "net.h"
 #include "script.h"
 #include "scrypt_mine.h"
+#include "hashblock.h"
 
 #include <list>
 
@@ -957,7 +958,7 @@ public:
         scrypt_buffer_free(scratchbuff);
 
         return thash;*/
-		return HashMirror(BEGIN(nVersion), END(nNonce));
+		return Hash9(BEGIN(nVersion), END(nNonce));
     }
 
     int64 GetBlockTime() const
@@ -970,7 +971,7 @@ public:
     // ppcoin: entropy bit for stake modifier if chosen by modifier
     unsigned int GetStakeEntropyBit(unsigned int nHeight) const
     {
-        // Protocol switch to support p2pool at GreenCoinX block #9689
+        // Protocol switch to support p2pool at CO2ExchangeCoin block #9689
         if (nHeight >= 9689 || fTestNet)
         {
             // Take last bit of block hash as entropy bit
@@ -979,7 +980,7 @@ public:
                 printf("GetStakeEntropyBit: nHeight=%u hashBlock=%s nEntropyBit=%u\n", nHeight, GetHash().ToString().c_str(), nEntropyBit);
             return nEntropyBit;
         }
-        // Before GreenCoinX block #9689 - old protocol
+        // Before CO2ExchangeCoin block #9689 - old protocol
         uint160 hashSig = Hash160(vchBlockSig);
         if (fDebug && GetBoolArg("-printstakemodifier"))
             printf("GetStakeEntropyBit: hashSig=%s", hashSig.ToString().c_str());

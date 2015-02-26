@@ -24,11 +24,11 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a valid GreenCoinX address"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a valid CO2ExchangeCoin address"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a valid GreenCoinX address"));
-    ui->signatureIn_VM->setPlaceholderText(tr("Enter GreenCoinX signature"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a valid CO2ExchangeCoin address"));
+    ui->signatureIn_VM->setPlaceholderText(tr("Enter CO2ExchangeCoin signature"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);
@@ -143,7 +143,7 @@ void SignVerifyMessageDialog::on_signMessageButton_SM_clicked()
     ss << ui->messageIn_SM->document()->toPlainText().toStdString();
 
     std::vector<unsigned char> vchSig;
-    if (!key.SignCompact(HashMirror(ss.begin(), ss.end()), vchSig))
+    if (!key.SignCompact(Hash(ss.begin(), ss.end()), vchSig))
     {
         ui->statusLabel_SM->setStyleSheet("QLabel { color: red; }");
         ui->statusLabel_SM->setText(QString("<nobr>") + tr("Message signing failed.") + QString("</nobr>"));
@@ -219,7 +219,7 @@ void SignVerifyMessageDialog::on_verifyMessageButton_VM_clicked()
     ss << ui->messageIn_VM->document()->toPlainText().toStdString();
 
     CKey key;
-    if (!key.SetCompactSignature(HashMirror(ss.begin(), ss.end()), vchSig))
+    if (!key.SetCompactSignature(Hash(ss.begin(), ss.end()), vchSig))
     {
         ui->signatureIn_VM->setValid(false);
         ui->statusLabel_VM->setStyleSheet("QLabel { color: red; }");

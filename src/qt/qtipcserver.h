@@ -2,10 +2,10 @@
 #define QTIPCSERVER_H
 
 // Define Bitcoin-Qt message queue name
-#define BITCOINURI_QUEUE_NAME "GreenCoinXURI"
+#define BITCOINURI_QUEUE_NAME "CO2ExchangeCoinURI"
 
 // Define Bitcoin-Qt message queue name for testnet
-#define BITCOINURI_QUEUE_NAME_TESTNET "GreenCoinX-testnet"
+#define BITCOINURI_QUEUE_NAME_TESTNET "CO2ExchangeCoin-testnet"
 
 void ipcScanRelay(int argc, char *argv[]);
 void ipcInit(int argc, char *argv[]);

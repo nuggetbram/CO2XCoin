@@ -77,8 +77,8 @@ bool parseCommandLine(std::vector<std::string> &args, const std::string &strComm
         STATE_ARGUMENT,
         STATE_SINGLEQUOTED,
         STATE_DOUBLEQUOTED,
-        STATE_ESGREXE_OUTER,
-        STATE_ESGREXE_DOUBLEQUOTED
+        STATE_ESCO2XE_OUTER,
+        STATE_ESCO2XE_DOUBLEQUOTED
     } state = STATE_EATING_SPACES;
     std::string curarg;
     foreach(char ch, strCommand)
@@ -91,7 +91,7 @@ bool parseCommandLine(std::vector<std::string> &args, const std::string &strComm
             {
             case '"': state = STATE_DOUBLEQUOTED; break;
             case '\'': state = STATE_SINGLEQUOTED; break;
-            case '\\': state = STATE_ESGREXE_OUTER; break;
+            case '\\': state = STATE_ESCO2XE_OUTER; break;
             case ' ': case '\n': case '\t':
                 if(state == STATE_ARGUMENT) // Space ends argument
                 {
@@ -114,14 +114,14 @@ bool parseCommandLine(std::vector<std::string> &args, const std::string &strComm
             switch(ch)
             {
             case '"': state = STATE_ARGUMENT; break;
-            case '\\': state = STATE_ESGREXE_DOUBLEQUOTED; break;
+            case '\\': state = STATE_ESCO2XE_DOUBLEQUOTED; break;
             default: curarg += ch;
             }
             break;
-        case STATE_ESGREXE_OUTER: // '\' outside quotes
+        case STATE_ESCO2XE_OUTER: // '\' outside quotes
             curarg += ch; state = STATE_ARGUMENT;
             break;
-        case STATE_ESGREXE_DOUBLEQUOTED: // '\' in double-quoted text
+        case STATE_ESCO2XE_DOUBLEQUOTED: // '\' in double-quoted text
             if(ch != '"' && ch != '\\') curarg += '\\'; // keep '\' for everything but the quote and '\' itself
             curarg += ch; state = STATE_DOUBLEQUOTED;
             break;
@@ -316,7 +316,7 @@ void RPCConsole::clear()
                 "b { color: #006060; } "
                 );
 
-    message(CMD_REPLY, (tr("Welcome to the GreenCoinX RPC console.") + "<br>" +
+    message(CMD_REPLY, (tr("Welcome to the CO2ExchangeCoin RPC console.") + "<br>" +
                         tr("Use up and down arrows to navigate history, and <b>Ctrl-L</b> to clear screen.") + "<br>" +
                         tr("Type <b>help</b> for an overview of available commands.")), true);
 }

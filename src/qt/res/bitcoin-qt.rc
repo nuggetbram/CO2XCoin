@@ -1,4 +1,4 @@
-IDI_ICON1 ICON DISCARDABLE "icons/GreenCoinX.ico"
+IDI_ICON1 ICON DISCARDABLE "icons/CO2ExchangeCoin.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "GreenCoinX"
-            VALUE "FileDescription",    "GreenCoinX-Qt (OSS GUI client for GreenCoinX)"
+            VALUE "CompanyName",        "CO2ExchangeCoin"
+            VALUE "FileDescription",    "CO2ExchangeCoin-Qt (OSS GUI client for CO2ExchangeCoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "GreenCoinX-qt"
-            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The GreenCoinX & PPCoin developers"
+            VALUE "InternalName",       "CO2ExchangeCoin-qt"
+            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The CO2ExchangeCoin & PPCoin developers"
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "GreenCoinX-qt.exe"
-            VALUE "ProductName",        "GreenCoinX-Qt"
+            VALUE "OriginalFilename",   "CO2ExchangeCoin-qt.exe"
+            VALUE "ProductName",        "CO2ExchangeCoin-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

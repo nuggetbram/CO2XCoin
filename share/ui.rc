@@ -1,4 +1,4 @@
-GreenCoinX               ICON    "pixmaps/GreenCoinX.ico"
+CO2ExchangeCoin               ICON    "pixmaps/CO2ExchangeCoin.ico"
 
 #include "wx/msw/wx.rc"
 

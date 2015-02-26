@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = GreenCoinX-qt
+TARGET = CO2ExchangeCoin-qt
 VERSION = 0.7.2
 QT += core gui network
 INCLUDEPATH += src src/json src/qt
@@ -300,7 +300,7 @@ SOURCES += src/qt/test/test_main.cpp \
 HEADERS += src/qt/test/uritests.h
 DEPENDPATH += src/qt/test
 QT += testlib
-TARGET = GreenCoinX-qt_test
+TARGET = CO2ExchangeCoin-qt_test
 DEFINES += BITCOIN_QT_TEST
 }
 
@@ -381,7 +381,7 @@ macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
 macx:ICON = src/qt/res/icons/bitcoin.icns
-macx:TARGET = "GreenCoinX-Qt"
+macx:TARGET = "CO2ExchangeCoin-Qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread

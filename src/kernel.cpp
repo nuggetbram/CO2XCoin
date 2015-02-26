@@ -89,7 +89,7 @@ static bool SelectBlockFromCandidates(
         uint256 hashProof = pindex->IsProofOfStake()? pindex->hashProofOfStake : pindex->GetBlockHash();
         CDataStream ss(SER_GETHASH, 0);
         ss << hashProof << nStakeModifierPrev;
-        uint256 hashSelection = HashMirror(ss.begin(), ss.end());
+        uint256 hashSelection = Hash(ss.begin(), ss.end());
         // the selection hash is divided by 2**32 so that proof-of-stake block
         // is always favored over proof-of-work block. this is to preserve
         // the energy efficiency property
@@ -310,7 +310,7 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock& blockFrom, unsigned 
     ss << nStakeModifier;
 
     ss << nTimeBlockFrom << nTxPrevOffset << txPrev.nTime << prevout.n << nTimeTx;
-    hashProofOfStake = HashMirror(ss.begin(), ss.end());
+    hashProofOfStake = Hash(ss.begin(), ss.end());
     if (fPrintProofOfStake)
     {
         printf("CheckStakeKernelHash() : using modifier 0x%016"PRI64x" at height=%d timestamp=%s for block from height=%d timestamp=%s\n",
@@ -392,7 +392,7 @@ unsigned int GetStakeModifierChecksum(const CBlockIndex* pindex)
     if (pindex->pprev)
         ss << pindex->pprev->nStakeModifierChecksum;
     ss << pindex->nFlags << pindex->hashProofOfStake << pindex->nStakeModifier;
-    uint256 hashChecksum = HashMirror(ss.begin(), ss.end());
+    uint256 hashChecksum = Hash(ss.begin(), ss.end());
     hashChecksum >>= (256 - 32);
     return hashChecksum.Get64();
 }

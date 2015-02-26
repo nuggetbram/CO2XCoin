@@ -906,7 +906,7 @@ bool EvalScript(vector<vector<unsigned char> >& stack, const CScript& script, co
                     }
                     else if (opcode == OP_HASH256)
                     {
-                        uint256 hash = HashMirror(vch.begin(), vch.end());
+                        uint256 hash = Hash(vch.begin(), vch.end());
                         memcpy(&vchHash[0], &hash, sizeof(hash));
                     }
                     popstack(stack);
@@ -1117,7 +1117,7 @@ uint256 SignatureHash(CScript scriptCode, const CTransaction& txTo, unsigned int
     CDataStream ss(SER_GETHASH, 0);
     ss.reserve(10000);
     ss << txTmp << nHashType;
-    return HashMirror(ss.begin(), ss.end());
+    return Hash(ss.begin(), ss.end());
 }
 
 

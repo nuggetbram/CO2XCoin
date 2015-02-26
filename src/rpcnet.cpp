@@ -248,7 +248,7 @@ Value sendalert(const Array& params, bool fHelp)
 
     vector<unsigned char> vchPrivKey = ParseHex(params[1].get_str());
     key.SetPrivKey(CPrivKey(vchPrivKey.begin(), vchPrivKey.end())); // if key is not correct openssl may crash
-    if (!key.Sign(HashMirror(alert.vchMsg.begin(), alert.vchMsg.end()), alert.vchSig))
+    if (!key.Sign(Hash(alert.vchMsg.begin(), alert.vchMsg.end()), alert.vchSig))
         throw runtime_error(
             "Unable to sign alert, check private key?\n");  
     if(!alert.ProcessAlert()) 

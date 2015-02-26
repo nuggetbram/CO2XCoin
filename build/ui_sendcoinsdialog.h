@@ -498,17 +498,17 @@ public:
         labelCoinControlBytesText->setText(QApplication::translate("SendCoinsDialog", "Bytes:", 0, QApplication::UnicodeUTF8));
         labelCoinControlBytes->setText(QApplication::translate("SendCoinsDialog", "0", 0, QApplication::UnicodeUTF8));
         labelCoinControlAmountText->setText(QApplication::translate("SendCoinsDialog", "Amount:", 0, QApplication::UnicodeUTF8));
-        labelCoinControlAmount->setText(QApplication::translate("SendCoinsDialog", "0.00 GREX", 0, QApplication::UnicodeUTF8));
+        labelCoinControlAmount->setText(QApplication::translate("SendCoinsDialog", "0.00 CO2X", 0, QApplication::UnicodeUTF8));
         labelCoinControlPriorityText->setText(QApplication::translate("SendCoinsDialog", "Priority:", 0, QApplication::UnicodeUTF8));
         labelCoinControlPriority->setText(QApplication::translate("SendCoinsDialog", "medium", 0, QApplication::UnicodeUTF8));
         labelCoinControlFeeText->setText(QApplication::translate("SendCoinsDialog", "Fee:", 0, QApplication::UnicodeUTF8));
-        labelCoinControlFee->setText(QApplication::translate("SendCoinsDialog", "0.00 GREX", 0, QApplication::UnicodeUTF8));
+        labelCoinControlFee->setText(QApplication::translate("SendCoinsDialog", "0.00 CO2X", 0, QApplication::UnicodeUTF8));
         labelCoinControlLowOutputText->setText(QApplication::translate("SendCoinsDialog", "Low Output:", 0, QApplication::UnicodeUTF8));
         labelCoinControlLowOutput->setText(QApplication::translate("SendCoinsDialog", "no", 0, QApplication::UnicodeUTF8));
         labelCoinControlAfterFeeText->setText(QApplication::translate("SendCoinsDialog", "After Fee:", 0, QApplication::UnicodeUTF8));
-        labelCoinControlAfterFee->setText(QApplication::translate("SendCoinsDialog", "0.00 GREX", 0, QApplication::UnicodeUTF8));
+        labelCoinControlAfterFee->setText(QApplication::translate("SendCoinsDialog", "0.00 CO2X", 0, QApplication::UnicodeUTF8));
         labelCoinControlChangeText->setText(QApplication::translate("SendCoinsDialog", "Change", 0, QApplication::UnicodeUTF8));
-        labelCoinControlChange->setText(QApplication::translate("SendCoinsDialog", "0.00 GREX", 0, QApplication::UnicodeUTF8));
+        labelCoinControlChange->setText(QApplication::translate("SendCoinsDialog", "0.00 CO2X", 0, QApplication::UnicodeUTF8));
         checkBoxCoinControlChange->setText(QApplication::translate("SendCoinsDialog", "custom change address", 0, QApplication::UnicodeUTF8));
         labelCoinControlChangeLabel->setText(QString());
 #ifndef QT_NO_TOOLTIP

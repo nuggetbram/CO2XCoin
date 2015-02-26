@@ -98,7 +98,7 @@ bool CAlert::IsNull() const
 
 uint256 CAlert::GetHash() const
 {
-    return HashMirror(this->vchMsg.begin(), this->vchMsg.end());
+    return Hash(this->vchMsg.begin(), this->vchMsg.end());
 }
 
 bool CAlert::IsInEffect() const
@@ -149,7 +149,7 @@ bool CAlert::CheckSignature() const
     CKey key;
     if (!key.SetPubKey(ParseHex(fTestNet ? pszTestKey : pszMainKey)))
         return error("CAlert::CheckSignature() : SetPubKey failed");
-    if (!key.Verify(HashMirror(vchMsg.begin(), vchMsg.end()), vchSig))
+    if (!key.Verify(Hash(vchMsg.begin(), vchMsg.end()), vchSig))
         return error("CAlert::CheckSignature() : verify signature failed");
 
     // Now unserialize the data

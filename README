@@ -1,5 +1,5 @@
 
-GreenCoinX Crypto Tokens
+CO2ExchangeCoin Crypto Tokens
 
 Based on NVC/BitGems
 Proof of Work/Proof of Stake Hybrid

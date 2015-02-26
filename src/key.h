@@ -82,7 +82,7 @@ public:
     }
 
     uint256 GetHash() const {
-        return HashMirror(vchPubKey.begin(), vchPubKey.end());
+        return Hash(vchPubKey.begin(), vchPubKey.end());
     }
 
     bool IsValid() const {

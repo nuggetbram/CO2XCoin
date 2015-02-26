@@ -464,53 +464,14 @@ bool SoftSetBoolArg(const std::string& strArg, bool fValue);
 
 
 template<typename T1>
-inline uint256 HashMirror(const T1 pbegin, const T1 pend)
+inline uint256 Hash(const T1 pbegin, const T1 pend)
 {
-    sph_sha256_context	 ctx_sha256;
-	sph_radiogatun64_context  ctx_radiogatun64;
-	sph_panama_context	 ctx_panama;
-	
-	static unsigned char pblank[3];
-
-	#ifndef QT_NO_DEBUG
-	//std::string strhash;
-	//strhash = "";
-	#endif
-
-	
-	
-	uint512 hash[7];
-
-    sph_radiogatun64_init(&ctx_radiogatun64);
-    sph_radiogatun64 (&ctx_radiogatun64, (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0])), (pend - pbegin) * sizeof(pbegin[0]));
-    sph_radiogatun64_close(&ctx_radiogatun64, static_cast<void*>(&hash[0]));
-    
-    sph_panama_init(&ctx_panama);
-    sph_panama (&ctx_panama, static_cast<const void*>(&hash[0]), 64);
-    sph_panama_close(&ctx_panama, static_cast<void*>(&hash[1]));
-    
-    sph_sha256_init(&ctx_sha256);
-    sph_sha256(&ctx_sha256, static_cast<const void*>(&hash[1]), 64);
-    sph_sha256_close(&ctx_sha256, static_cast<void*>(&hash[2]));
-        
-     /*-------------------------------MIRROR---------------------------*/
-        
-    sph_sha256_init(&ctx_sha256);
-    sph_sha256(&ctx_sha256, static_cast<const void*>(&hash[2]), 64);
-    sph_sha256_close(&ctx_sha256, static_cast<void*>(&hash[3]));    
-    
-    sph_panama_init(&ctx_panama);
-    sph_panama (&ctx_panama, static_cast<const void*>(&hash[3]), 64);
-    sph_panama_close(&ctx_panama, static_cast<void*>(&hash[4]));
-    
-    sph_radiogatun64_init(&ctx_radiogatun64);
-    sph_radiogatun64 (&ctx_radiogatun64, static_cast<const void*>(&hash[4]), 64);
-    sph_radiogatun64_close(&ctx_radiogatun64, static_cast<void*>(&hash[5]));
-    
-
-    return hash[5].trim256();
-	
-	
+    static unsigned char pblank[1];
+    uint256 hash1;
+    SHA256((pbegin == pend ? pblank : (unsigned char*)&pbegin[0]), (pend - pbegin) * sizeof(pbegin[0]), (unsigned char*)&hash1);
+    uint256 hash2;
+    SHA256((unsigned char*)&hash1, sizeof(hash1), (unsigned char*)&hash2);
+    return hash2;
 }
 
 class CHashWriter
@@ -554,7 +515,7 @@ public:
 
 
 template<typename T1, typename T2>
-inline uint256 Hash4(const T1 p1begin, const T1 p1end,
+inline uint256 Hash(const T1 p1begin, const T1 p1end,
                     const T2 p2begin, const T2 p2end)
 {
     static unsigned char pblank[1];
@@ -569,7 +530,7 @@ inline uint256 Hash4(const T1 p1begin, const T1 p1end,
     return hash2;
 }
 
-/*template<typename T1, typename T2, typename T3>
+template<typename T1, typename T2, typename T3>
 inline uint256 Hash(const T1 p1begin, const T1 p1end,
                     const T2 p2begin, const T2 p2end,
                     const T3 p3begin, const T3 p3end)
@@ -585,7 +546,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end,
     uint256 hash2;
     SHA256((unsigned char*)&hash1, sizeof(hash1), (unsigned char*)&hash2);
     return hash2;
-}*/
+}
 
 template<typename T>
 uint256 SerializeHash(const T& obj, int nType=SER_GETHASH, int nVersion=PROTOCOL_VERSION)

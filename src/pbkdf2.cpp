@@ -1,4 +1,4 @@
-// Copyright (c) 2013 GreenCoinX Developers
+// Copyright (c) 2013 CO2ExchangeCoin Developers
 
 #include <string.h>
 #include "pbkdf2.h"
