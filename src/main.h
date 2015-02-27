@@ -59,7 +59,7 @@ inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONE
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-#define FOUNDATION_ADDRESS "6FMqipiuswD3By66y3tLkYRK2bAw4B9fTuUMysB67rMq7gbJMB3"
+#define FOUNDATION_ADDRESS "CarbonXDcVbQokzhXHdTQrGXY4hEwLouYm"
 #define FOUNDATION_ADDRESS_TEST "mwmPTAA7cSDY8Dd5rRHuYitwS2hByXQpdA"
 
 #ifdef USE_UPNP
