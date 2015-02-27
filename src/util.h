@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
+﻿// Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -7,9 +7,7 @@
 
 #include "uint256.h"
 #include "serialize.h"
-#include "sph_sha2.h"
-#include "sph_radiogatun.h"
-#include "sph_panama.h"
+
 
 
 #ifndef WIN32
@@ -32,22 +30,8 @@
 
 #include "netbase.h" // for AddTimeData
 
-#ifdef GLOBALDEFINED
-#define GLOBAL
-#else
-#define GLOBAL extern
-#endif
-
-GLOBAL sph_sha256_context		z_sha256;
-GLOBAL sph_radiogatun64_context	z_radiogatun64;
-GLOBAL sph_panama_context	z_panama;
 
 
-#define fillz() do { \
-    sph_sha256_init(&z_sha256); \
-	sph_radiogatun64_init(&z_radiogatun64); \
-    sph_panama_init(&z_panama); \
-} while (0) 
 
 typedef long long  int64;
 typedef unsigned long long  uint64;

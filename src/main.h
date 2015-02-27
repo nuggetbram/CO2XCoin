@@ -59,7 +59,7 @@ inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONE
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-#define FOUNDATION_ADDRESS "GKxp6eUMfh1gJTGmqF3fgvmf4ams6nLxSv"
+#define FOUNDATION_ADDRESS "6FMqipiuswD3By66y3tLkYRK2bAw4B9fTuUMysB67rMq7gbJMB3"
 #define FOUNDATION_ADDRESS_TEST "mwmPTAA7cSDY8Dd5rRHuYitwS2hByXQpdA"
 
 #ifdef USE_UPNP
@@ -68,7 +68,7 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x00000e01e25db89e6c8f2463f6f8caf018adf779885ec7aec21b046d7c61f0c7");
+static const uint256 hashGenesisBlockOfficial("0x0000080e9ecb01a34407128fb6c6d7930806cc2b4a4ebf23f70be25abd755e16");
 static const uint256 hashGenesisBlockTestNet("0x");
 
 inline int64 PastDrift(int64 nTime)
@@ -1026,7 +1026,7 @@ public:
             for (int i = 0; i < nSize; i += 2)
             {//HEERE
                 int i2 = std::min(i+1, nSize-1);
-                vMerkleTree.push_back(Hash4(BEGIN(vMerkleTree[j+i]),  END(vMerkleTree[j+i]),
+                vMerkleTree.push_back(Hash(BEGIN(vMerkleTree[j+i]),  END(vMerkleTree[j+i]),
                                            BEGIN(vMerkleTree[j+i2]), END(vMerkleTree[j+i2])));
             }
             j += nSize;
@@ -1057,9 +1057,9 @@ public:
         BOOST_FOREACH(const uint256& otherside, vMerkleBranch)
         {
             if (nIndex & 1)
-                hash = Hash4(BEGIN(otherside), END(otherside), BEGIN(hash), END(hash));
+                hash = Hash(BEGIN(otherside), END(otherside), BEGIN(hash), END(hash));
             else
-                hash = Hash4(BEGIN(hash), END(hash), BEGIN(otherside), END(otherside));
+                hash = Hash(BEGIN(hash), END(hash), BEGIN(otherside), END(otherside));
             nIndex >>= 1;
         }
         return hash;
